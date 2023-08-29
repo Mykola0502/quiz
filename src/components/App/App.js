@@ -8,15 +8,18 @@ import { Container } from "./App.styled";
 
 export const App = () => {
   const [step, setStep] = useState(0);
+  const [correct, setCorrect] = useState(0);
 
   const question = questions[step];
-  console.log(step);
 
   // console.log("Question", question);
 
   const onClickVariant = (index) => {
     console.log(step, index);
     setStep((prevState) => prevState + 1);
+    if (index === question.correct) {
+      setCorrect((prevState) => prevState + 1);
+    }
   };
 
   return (
@@ -24,7 +27,7 @@ export const App = () => {
       {step !== questions.length ? (
         <Game step={step} question={question} onClickVariant={onClickVariant} />
       ) : (
-        <Result />
+        <Result correct={correct} />
       )}
     </Container>
   );
