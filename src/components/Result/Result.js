@@ -8,7 +8,9 @@ export const Result = ({ correct }) => {
       <h2>
         Ви відгадали {correct} відповіді з {questions.length}
       </h2>
-      <Button>Спробувати знову</Button>
+      <a href="/">
+        <Button>Спробувати знову</Button>
+      </a>
     </Container>
   );
 };
