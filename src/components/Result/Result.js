@@ -12,15 +12,17 @@ export const Result = ({ correct }) => {
     answer = "відповідей";
   }
 
+  const handleGoHome = () => {
+    window.location.reload();
+  };
+
   return (
     <Container>
       <Img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" />
       <h2>
         Ви відгадали {correct} {answer} з {questions.length}
       </h2>
-      <a href="/">
-        <Button>Спробувати знову</Button>
-      </a>
+      <Button onClick={handleGoHome}>Спробувати знову</Button>
     </Container>
   );
 };
