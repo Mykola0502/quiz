@@ -10,6 +10,7 @@ export const App = () => {
   const [step, setStep] = useState(0);
 
   const question = questions[step];
+  console.log(step);
 
   // console.log("Question", question);
 
@@ -20,8 +21,11 @@ export const App = () => {
 
   return (
     <Container>
-      <Game step={step} question={question} onClickVariant={onClickVariant} />
-      {/* <Result /> */}
+      {step !== questions.length ? (
+        <Game step={step} question={question} onClickVariant={onClickVariant} />
+      ) : (
+        <Result />
+      )}
     </Container>
   );
 };

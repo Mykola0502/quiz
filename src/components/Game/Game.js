@@ -3,7 +3,6 @@ import { Progress, Inner, Answer } from "./Game.styled";
 
 export const Game = ({ step, question, onClickVariant }) => {
   const percentage = Math.round((step / questions.length) * 100);
-  console.log("percentage", percentage);
 
   return (
     <>
