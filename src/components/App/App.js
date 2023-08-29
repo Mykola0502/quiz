@@ -20,7 +20,7 @@ export const App = () => {
 
   return (
     <Container>
-      <Game question={question} onClickVariant={onClickVariant} />
+      <Game step={step} question={question} onClickVariant={onClickVariant} />
       {/* <Result /> */}
     </Container>
   );

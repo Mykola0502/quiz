@@ -1,10 +1,14 @@
+import questions from "../../db/questions.json";
 import { Progress, Inner, Answer } from "./Game.styled";
 
-export const Game = ({ question, onClickVariant }) => {
+export const Game = ({ step, question, onClickVariant }) => {
+  const percentage = Math.round((step / questions.length) * 100);
+  console.log("percentage", percentage);
+
   return (
     <>
       <Progress>
-        <Inner style={{ width: "20%" }} />
+        <Inner style={{ width: `${percentage}%` }} />
       </Progress>
       <h1>{question.title}</h1>
       <ul>
