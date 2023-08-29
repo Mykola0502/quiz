@@ -12,10 +12,7 @@ export const App = () => {
 
   const question = questions[step];
 
-  // console.log("Question", question);
-
   const onClickVariant = (index) => {
-    console.log(step, index);
     setStep((prevState) => prevState + 1);
     if (index === question.correct) {
       setCorrect((prevState) => prevState + 1);
