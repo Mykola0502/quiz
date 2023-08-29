@@ -1,13 +1,27 @@
-// import { Game } from "../Game";
+import { useState } from "react";
+
+import { Game } from "../Game";
 import { Result } from "../Result";
+import questions from "../../db/questions.json";
 
 import { Container } from "./App.styled";
 
 export const App = () => {
+  const [step, setStep] = useState(0);
+
+  const question = questions[step];
+
+  // console.log("Question", question);
+
+  const onClickVariant = (index) => {
+    console.log(step, index);
+    setStep((prevState) => prevState + 1);
+  };
+
   return (
     <Container>
-      {/* <Game /> */}
-      <Result />
+      <Game question={question} onClickVariant={onClickVariant} />
+      {/* <Result /> */}
     </Container>
   );
 };

@@ -1,16 +1,18 @@
 import { Progress, Inner, Answer } from "./Game.styled";
 
-export const Game = () => {
+export const Game = ({ question, onClickVariant }) => {
   return (
     <>
       <Progress>
-        <Inner />
+        <Inner style={{ width: "20%" }} />
       </Progress>
-      <h1>Що таке "useState"?</h1>
+      <h1>{question.title}</h1>
       <ul>
-        <Answer>Це функція для зберігання даних компонентів</Answer>
-        <Answer>Це глобальний стейт</Answer>
-        <Answer>Це коли на ти никому не потрібно</Answer>
+        {question.variants.map((text, index) => (
+          <Answer key={index} onClick={() => onClickVariant(index)}>
+            {text}
+          </Answer>
+        ))}
       </ul>
     </>
   );

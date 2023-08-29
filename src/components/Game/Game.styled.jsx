@@ -8,10 +8,9 @@ export const Progress = styled.div`
 `;
 
 export const Inner = styled.div`
-  width: "50%";
+  /* width: 20%; */
   height: 100%;
   border-radius: 30px;
-  width: 80%;
   background: rgb(18, 231, 48);
   transition: all 0.3s ease-in-out;
   background: linear-gradient(
